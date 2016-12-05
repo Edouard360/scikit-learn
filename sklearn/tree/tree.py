@@ -57,7 +57,7 @@ DTYPE = _tree.DTYPE
 DOUBLE = _tree.DOUBLE
 
 CRITERIA_CLF = {"gini": _criterion.Gini, "entropy": _criterion.Entropy}
-CRITERIA_REG = {"mse": _criterion.MSE, "friedman_mse": _criterion.FriedmanMSE,
+CRITERIA_REG = {"mse": _criterion.MSE, "friedman_mse": _criterion.FriedmanMSE,"linex": _criterion.LinexLeavesCriterionMSESplit,"pureLinex": _criterion.LinexLeavesCriterionHalfMSESplit,
                 "mae": _criterion.MAE}
 
 DENSE_SPLITTERS = {"best": _splitter.BestSplitter,
@@ -1028,7 +1028,6 @@ class DecisionTreeRegressor(BaseDecisionTree, RegressorMixin):
             check_input=check_input,
             X_idx_sorted=X_idx_sorted)
         return self
-
 
 class ExtraTreeClassifier(DecisionTreeClassifier):
     """An extremely randomized tree classifier.
